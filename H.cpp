@@ -4,9 +4,9 @@
 
 using namespace std;
 
-bool check(vector<long>& nums, int k, long mid) {
+bool check(vector<int>& nums, int k, int mid) {
 	int initK = 1;
-	long initKCoords = nums[0];
+	int initKCoords = nums[0];
 
 	for (long num : nums) {
 		if (num - initKCoords >= mid) {
@@ -26,7 +26,7 @@ int main() {
 	int n, k;
 	cin >> n >> k;
 
-	vector<long> nums(n);
+	vector<int> nums(n);
 
 	for (int i = 0; i < n; i++) {
 		cin >> nums[i];
@@ -34,11 +34,11 @@ int main() {
 	
 	sort(nums.begin(), nums.end());
 
-	long l = nums[0];
-	long r = nums[nums.size() - 1];
+	int l = nums[0];
+	int r = nums[nums.size() - 1];
 
 	while (l <= r) {
-		long mid = (l + r) / 2;
+		int mid = (l + r) / 2;
 
 		if (check(nums, k, mid)) {
 			l = mid + 1;
