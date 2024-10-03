@@ -41,6 +41,11 @@ int main() {
 		max_num = max(max_num, sixth);
 	}
 
+	if (max_num == 0) {
+		cout << -1;
+		return 0;
+	}
+
 	cout << max_num;
 
 	return 0;
